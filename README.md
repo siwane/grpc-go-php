@@ -5,30 +5,26 @@
 
 ### Install dependencies
 ```shell script
-cd client
+cd client/ && composer install
 ```
 
-```shell script
-composer install
-```
+## Generate php protobuf definition
 
-### Generate php protobuf definition
-
+From root directory
 ```shell script
 GRPC_PHP_PLUGIN_PATH=$(PATH_OF_GRPC_PLUGIN)/bins/opt/grpc_php_plugin
-```
-
-```shell script
 protoc --proto_path=.  \
    --php_out=client/lib \
    --grpc_out=client/lib \
    --plugin=protoc-gen-grpc=$GRPC_PHP_PLUGIN_PATH \
-   ./service.proto
+   ./client/service.proto
 ```
    
 ## Create GO server
 
 ```shell script
+cd server/
+
 go run main.go
 ```
 # Run
