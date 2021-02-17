@@ -22,11 +22,8 @@ protoc --proto_path=.  \
    
 ## Create GO server
 
-```shell script
-cd server/
+Protobuf definition are already generated in source code and will be complied during runtime
 
-go run main.go
-```
 # Run
 
 Run go server that accept grpc connection
@@ -34,10 +31,10 @@ Run go server that accept grpc connection
 `Note that this server needs to be ran before client`
 
 ```shell script
-go run main.go
+cd server/ && go run main.go
 ```
 
-Run php client
+Run php client from root directory
 
 `Note that this client include a timer to calculate time spent on request`
 
@@ -49,11 +46,13 @@ php client/greeter_client.php $number_of_outcoming_request
 
 ```shell script
 $ php client/greeter_client.php 1
+Requesting for 1 call(s)
 [...]
 This process used 9 ms for its computations
 It spent 3 ms in system calls
 
 $ php client/greeter_client.php 10
+Requesting for 10 call(s)
 [...]
 This process used 11 ms for its computations
 It spent 4 ms in system calls
