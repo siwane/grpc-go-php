@@ -5,6 +5,10 @@
 
 ### Install dependencies
 ```shell script
+cd client
+```
+
+```shell script
 composer install
 ```
 
@@ -30,18 +34,22 @@ go run main.go
 # Run
 
 Run go server that accept grpc connection
+
+`Note that this server needs to be ran before client`
+
 ```shell script
 go run main.go
 ```
 
 Run php client
+
 `Note that this client include a timer to calculate time spent on request`
 
 ```shell script
 php client/greeter_client.php $number_of_outcoming_request
 ```
 
-#Example
+# Example of output
 
 ```shell script
 $ php client/greeter_client.php 1

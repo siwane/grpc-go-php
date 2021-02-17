@@ -33,6 +33,8 @@ function greet($name)
 $rustart = getrusage();
 
 $i = !empty($argv[1]) ? $argv[1] : '1';
+echo "Requesting for $i call(s)";
+
 for ($x = 0; $x < (int) $i; $x++) {
   echo greet("world")."\n";
 }
