@@ -1,0 +1,5 @@
+version: v1beta1
+build:
+  roots:
+  - proto
+  - github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis
